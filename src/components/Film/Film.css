@@ -1,0 +1,8 @@
+.Film {
+  display: flex;
+  margin: 0px 40px 10px 20px;
+}
+
+.FilmInfo {
+  margin-left: 40px;
+}
