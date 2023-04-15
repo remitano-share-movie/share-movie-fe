@@ -28,9 +28,10 @@ const Header = ({loginInfo})  => {
         setIsRegister(false)
       }
       
-      
-      setDataInfo(response.data);
-      setAuthLogin(true)
+      if (response.data !== undefined) {
+        setDataInfo(response.data);
+        setAuthLogin(true)
+      }
       // set access_token to cookie
       cookie.save('access_token', response.data?.access_token);
       cookie.save('user_data', response.data);
@@ -64,9 +65,10 @@ const Header = ({loginInfo})  => {
         setIsRegister(false)
       }
       
-      
-      setDataInfo(response.data);
-      setAuthLogin(true)
+      if (response.data !== undefined) {
+        setDataInfo(response.data);
+        setAuthLogin(true)
+      }
       // set access_token to cookie
       cookie.save('access_token', response.data?.access_token);
       cookie.save('user_data', response.data);
@@ -119,7 +121,7 @@ const Header = ({loginInfo})  => {
       </div>
       {authLogin ? 
         <div>
-          <span>{dataInfo.username}</span>
+          <span>{dataInfo?.username}</span>
           <button onClick={handleNavigate}>Share a movie</button>
           <button onClick={logout}>Log out</button>
         </div>

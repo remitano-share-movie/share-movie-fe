@@ -10,7 +10,7 @@ export default function AuthMiddleware({ children }) {
     useEffect(()=>{
         console.log("authLogin: ", authLogin)
         if (!authLogin) {
-            navigate("/login")
+            navigate("/")
         }
     }, [])
 
